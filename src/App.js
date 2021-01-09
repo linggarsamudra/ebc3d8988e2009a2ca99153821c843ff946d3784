@@ -5,6 +5,8 @@ import ButtonSelectLocation from "./components/button-select-location";
 import DateSelector from "./components/date-selector";
 import FoodCard from "./components/food-card";
 import TabButton from "./components/tab-button";
+import moment from 'moment';
+import 'moment/locale/id';
 
 class App extends Component {
 
@@ -14,8 +16,16 @@ class App extends Component {
 		this.state = {
 			floatingCart: false,
 			modalLocation: false,
+			strDateNow: ''
 		}
 
+	}
+
+	componentDidMount() {
+		const dateNow = moment().locale("id").format('dddd. LL');
+		this.setState({
+			strDateNow: dateNow
+		});
 	}
 
 	toggleModal() {
@@ -51,7 +61,8 @@ class App extends Component {
 	render() {
 		const {
 			floatingCart,
-			modalLocation
+			modalLocation,
+			strDateNow
 		} = this.state;
 		return (
 			<div className="container">
@@ -64,10 +75,18 @@ class App extends Component {
 
 					<TabButton />
 
-					<FoodCard toggleCart={this.toggleCart.bind(this)} />
-					<FoodCard toggleCart={this.toggleCart.bind(this)} />
-					<FoodCard toggleCart={this.toggleCart.bind(this)} />
-					<FoodCard toggleCart={this.toggleCart.bind(this)} />
+					<div className="m-auto px-4 max-w-xl md:max-w-md lg:max-w-none">
+						<h2 className="font-bold">
+							{strDateNow}
+						</h2>
+					</div>
+
+					<div className="flex flex-wrap">
+						<FoodCard toggleCart={this.toggleCart.bind(this)} />
+						<FoodCard toggleCart={this.toggleCart.bind(this)} />
+						<FoodCard toggleCart={this.toggleCart.bind(this)} />
+						<FoodCard toggleCart={this.toggleCart.bind(this)} />
+					</div>
 
 					<FloatingCart visible={floatingCart} />
 
