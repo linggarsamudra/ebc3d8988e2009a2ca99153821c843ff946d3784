@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import ModalLocation from "./components/modal-location";
 import FloatingCart from "./components/floating-cart";
 import ButtonSelectLocation from "./components/button-select-location";
 import DateSelector from "./components/date-selector";
@@ -11,7 +12,8 @@ class App extends Component {
 		super(props);
 
 		this.state = {
-			visible: true
+			floatingCart: false,
+			modalLocation: false,
 		}
 
 	}
@@ -21,7 +23,7 @@ class App extends Component {
 			<div className="container">
 
 				<div className="sticky top-0 bg-white">
-					<ButtonSelectLocation />
+					<ButtonSelectLocation onclick="toggleModal()" />
 					<DateSelector />
 				</div>
 				<div className="overflow-auto max-h-screen">
@@ -32,7 +34,13 @@ class App extends Component {
 					<FoodCard />
 					<FoodCard />
 					<FoodCard />
-					<FloatingCart />
+					{
+						this.state.floatingCart ? <FloatingCart /> : ''
+					}
+					{
+						this.state.modalLocation ? <ModalLocation /> : ''
+					}
+
 
 				</div>
 
