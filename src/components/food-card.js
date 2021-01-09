@@ -32,7 +32,7 @@ class FoodCard extends Component {
 
                             <h2 className="text-gray-700 font-bold text-2xl">
                                 Roasted Chicken with Scramble Egg
-						  </h2>
+						    </h2>
 
                             <span className="text-sm text-gray-500">by Kulina </span>
                             <span className="text-sm text-gray-500">Uptown Lunch</span>
@@ -40,10 +40,10 @@ class FoodCard extends Component {
                             <div className="flex items-center justify-between">
                                 <div className="text-lg text-gray-600">
                                     Rp. 75,000
-							</div>
+							    </div>
                                 <button className="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-6 rounded-lg">
                                     Add
-							</button>
+							    </button>
                             </div>
 
                         </div>
