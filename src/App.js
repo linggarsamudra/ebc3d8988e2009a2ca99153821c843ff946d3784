@@ -1,18 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import ButtonSelectLocation from "./components/button-select-location";
+import DateSelector from "./components/date-selector";
+import FoodCard from "./components/food-card";
+import TabButton from "./components/tab-button";
 
-function App() {
-  return (
-    <div class="p-6 max-w-sm mx-auto bg-white rounded-xl shadow-md flex items-center space-x-4">
-      <div class="flex-shrink-0">
-        <img class="h-12 w-12" src="/img/profile.jpg" alt="ChitChat Logo" />
-      </div>
-      <div>
-        <div class="text-xl font-medium text-black">ChitChat</div>
-        <p class="text-gray-500">You have a new message!</p>
-      </div>
-    </div>
-  );
+class App extends Component {
+
+	constructor(props) {
+		super(props);
+
+		this.state = {
+			visible: true
+		}
+
+	}
+
+	render() {
+		return (
+			<div className="container">
+
+				<div className="sticky top-0 bg-white">
+					<ButtonSelectLocation />
+					<DateSelector />
+				</div>
+				<div className="overflow-auto h-screen">
+
+					<TabButton />
+					<FoodCard />
+					<FoodCard />
+					<FoodCard />
+					<FoodCard />
+					<FoodCard />
+
+				</div>
+
+			</div>
+		);
+	}
 }
 
 export default App;
