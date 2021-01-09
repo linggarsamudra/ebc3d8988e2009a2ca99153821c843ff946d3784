@@ -13,33 +13,67 @@ class App extends Component {
 
 		this.state = {
 			floatingCart: false,
-			modalLocation: true,
+			modalLocation: false,
 		}
 
 	}
 
+	toggleModal() {
+		const {
+			floatingCart,
+			modalLocation
+		} = this.state;
+		if (floatingCart) {
+			this.setState({
+				floatingCart: !floatingCart
+			});
+		}
+		this.setState({
+			modalLocation: !modalLocation
+		})
+	}
+
+	toggleCart() {
+		console.log('toggleCart', this.state);
+		const {
+			modalLocation
+		} = this.state;
+		if (modalLocation) {
+			this.setState({
+				modalLocation: !modalLocation
+			})
+		}
+		this.setState({
+			floatingCart: true
+		}, () => {
+			console.log(this.state.floatingCart);
+		});
+	}
+
 	render() {
+		const {
+			floatingCart,
+			modalLocation
+		} = this.state;
 		return (
 			<div className="container">
 
 				<div className="sticky top-0 bg-white">
-					<ButtonSelectLocation onclick="toggleModal()" />
+					<ButtonSelectLocation toggleModal={this.toggleModal.bind(this)} />
 					<DateSelector />
 				</div>
 				<div className="overflow-auto max-h-screen">
 
 					<TabButton />
-					<FoodCard />
-					<FoodCard />
-					<FoodCard />
-					<FoodCard />
-					<FoodCard />
-					{
-						this.state.floatingCart ? <FloatingCart /> : ''
-					}
-					{
-						this.state.modalLocation ? <ModalLocation /> : ''
-					}
+
+					<FoodCard toggleCart={this.toggleCart.bind(this)} />
+
+					<FloatingCart visible={floatingCart} />
+
+					<ModalLocation
+						visible={modalLocation}
+						toggleModal={this.toggleModal.bind(this)}
+					/>
 
 
 				</div>

@@ -7,6 +7,11 @@ class FoodCard extends Component {
     }
 
     render() {
+
+        const {
+            toggleCart
+        } = this.props;
+
         return (
             <div>
 
@@ -41,7 +46,7 @@ class FoodCard extends Component {
                                 <div className="text-lg text-gray-600">
                                     Rp. 75,000
 							    </div>
-                                <button className="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-6 rounded-lg">
+                                <button onClick={toggleCart} className="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-6 rounded-lg">
                                     Add
 							    </button>
                             </div>

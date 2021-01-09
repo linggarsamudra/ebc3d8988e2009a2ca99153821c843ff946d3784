@@ -7,23 +7,27 @@ class ModalLocation extends Component {
     }
 
     render() {
+        const {
+            visible,
+            toggleModal
+        } = this.props;
         return (
 
-            <div className="fixed bottom-0 bg-gray-300 bg-opacity-50 w-full h-screen">
+            <div className={"fixed bottom-0 bg-gray-300 bg-opacity-50 w-full h-screen " + (visible ? '' : 'invisible')}>
                 <div className="fixed bottom-0 px-4 py-4 bg-white w-full rounded-t-2xl h-2/3">
 
-                    <h1 className="font-bold float-right">
+                    <h1 className="font-bold float-right" onClick={toggleModal}>
                         X
-                </h1>
+                    </h1>
 
                     <div className="flex">
                         &nbsp;
-                </div>
+                    </div>
 
                     <div className="flex">
                         <h1 className="flex-1 text-2xl">
                             Cek makanan yang tersedia di lokasi kamu!
-                    </h1>
+                        </h1>
                     </div>
 
                     <div className="flex w-full mt-2">
@@ -85,7 +89,7 @@ class ModalLocation extends Component {
                     {/* End Row Location */}
 
                 </div>
-            </div>
+            </div >
         );
     }
 
