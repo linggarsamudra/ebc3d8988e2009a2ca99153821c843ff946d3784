@@ -34,7 +34,6 @@ class App extends Component {
 	}
 
 	toggleCart() {
-		console.log('toggleCart', this.state);
 		const {
 			modalLocation
 		} = this.state;
@@ -46,7 +45,6 @@ class App extends Component {
 		this.setState({
 			floatingCart: true
 		}, () => {
-			console.log(this.state.floatingCart);
 		});
 	}
 
@@ -66,6 +64,9 @@ class App extends Component {
 
 					<TabButton />
 
+					<FoodCard toggleCart={this.toggleCart.bind(this)} />
+					<FoodCard toggleCart={this.toggleCart.bind(this)} />
+					<FoodCard toggleCart={this.toggleCart.bind(this)} />
 					<FoodCard toggleCart={this.toggleCart.bind(this)} />
 
 					<FloatingCart visible={floatingCart} />
