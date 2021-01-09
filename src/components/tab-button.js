@@ -1,17 +1,12 @@
 import React, { Component } from "react";
 
 class TabButton extends Component {
-
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return (
-            <div className="px-2 py-4">
-                <ul className='flex'>
-                    <li className='py-2 px-6 bg-gray-400 rounded-l-lg w-1/2 text-center text-white text-lg'>Lunch</li>
-                    <li className='py-2 rounded-r-lg px-6 text-gray-500 bg-white w-1/2 text-center text-lg border-gray-400 border-2'>Dinner</li>
+            <div className="px-2 py-4 md:flex md:justify-center">
+                <ul className='flex md:w-1/2'>
+                    <li className='py-2 px-6 bg-gray-500 rounded-l-lg w-1/2 text-center text-white text-lg shadow-2xl'>Lunch</li>
+                    <li className='py-2 px-6 bg-white rounded-r-lg w-1/2 text-center text-lg border-gray-300 border-r-2 border-t-2 border-b-2 shadow-2xl text-gray-400'>Dinner</li>
                 </ul>
             </div>
         );
