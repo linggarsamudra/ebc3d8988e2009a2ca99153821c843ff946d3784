@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import FloatingCart from "./components/floating-cart";
 import ButtonSelectLocation from "./components/button-select-location";
 import DateSelector from "./components/date-selector";
 import FoodCard from "./components/food-card";
@@ -23,7 +24,7 @@ class App extends Component {
 					<ButtonSelectLocation />
 					<DateSelector />
 				</div>
-				<div className="overflow-auto h-screen">
+				<div className="overflow-auto max-h-screen">
 
 					<TabButton />
 					<FoodCard />
@@ -31,6 +32,7 @@ class App extends Component {
 					<FoodCard />
 					<FoodCard />
 					<FoodCard />
+					<FloatingCart />
 
 				</div>
 
