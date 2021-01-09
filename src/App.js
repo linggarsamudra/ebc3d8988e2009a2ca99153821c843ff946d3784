@@ -13,7 +13,7 @@ class App extends Component {
 
 		this.state = {
 			floatingCart: false,
-			modalLocation: false,
+			modalLocation: true,
 		}
 
 	}
