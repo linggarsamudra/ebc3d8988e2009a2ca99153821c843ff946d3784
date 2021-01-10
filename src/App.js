@@ -65,7 +65,7 @@ class App extends Component {
 			strDateNow
 		} = this.state;
 		return (
-			<div className="container">
+			<div className="container" style={{ color: '#424749' }}>
 
 				<div className="sticky top-0 bg-white">
 					<ButtonSelectLocation toggleModal={this.toggleModal.bind(this)} />
