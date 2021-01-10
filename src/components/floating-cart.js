@@ -8,7 +8,7 @@ class FloatingCart extends Component {
         } = this.props;
         return (
             <div className={"fixed bottom-0 px-3 py-3 block w-full rounded-t-2xl " + (visible ? '' : 'invisible')}>
-                <div className="flex items-center justify-between w-full h-16 bg-red-800 rounded-2xl text-white px-3 py-2">
+                <div className="flex items-center justify-between w-full h-16 rounded-2xl text-white px-3 py-2" style={{ backgroundColor: '#a23530' }}>
 
                     <div>
                         <span className="flex font-bold">
